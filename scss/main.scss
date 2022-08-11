@@ -7,7 +7,7 @@ body {
     line-height: 1;
     height: 100vh;
     background: $bg-color;
-    color: $primary-color;
+    color: $secondary-color;
 }
 
 .header {
@@ -20,12 +20,23 @@ body {
     gap: 1rem;
     padding: 1.5rem;
 
-    &__logo {
-        width: fit-content;
+    &__logo-link {
         font-size: $responsive-typo;
         font-weight: 600;
         color: $primary-color;
+        background-image: linear-gradient($bg-color,$bg-color);
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 3px;
+        @include transition(background-size);
+
+        &:hover {
+            background-size: 100% 3px;
+            cursor: pointer;
+        }
     }
+
+
 }   
 
 
@@ -39,13 +50,37 @@ body {
 
     &__item {
         font-size: clamp(1rem, 2vw, 1.5rem);
+       
+    
+        &:focus {
+            outline: 1px solid $bg-color;
+        }
     }
 
     &__link {
         cursor: pointer;
+        background-image: linear-gradient($bg-color,$bg-color);
+        background-position: 0% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 3px;
+        @include transition(background-size);
+
+        &:hover {
+            background-size: 100% 3px;
+            cursor: pointer;
+        }
+        
 
         &-image {
-            width: clamp(2rem, 3vw, 2.5rem);
+            width: 2rem;
+
+            &:hover { 
+                box-shadow: -1px 1px 5px $bg-color;
+            }
+
+            &:focus {
+                border: 2px solid $bg-color;
+            }
         }   
 
     }

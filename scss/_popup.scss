@@ -2,13 +2,22 @@
     &__toggle {
         appearance: none;
         position: absolute;
-        
+    }
+
+    &__label-img {
+        width: 2rem;
+        cursor: pointer;
     }
 
     &__toggle:checked ~ &__menu {
         opacity: 1;
         @include transition(opacity);
     } 
+
+    &__toggle:focus + &__label,
+    &__toggle:focus + &__item-link {
+        outline: $bg-color auto 1px;
+    }
 
    
     &__menu {
@@ -47,13 +56,18 @@
 
         &-item {
             @include flex;
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            &:focus {
+                outline: $bg-color auto 1px;
+            }
         }
     }
 }
 
-.item-link {
 
-}
 .item-img {
     width: 2rem;
     height: 2rem;

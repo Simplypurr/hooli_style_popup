@@ -1,8 +1,8 @@
 $primary-color: #100720;
-$secondary-color: #F56D91;
+$secondary-color: #747474;
 $bg-color: #4A7AFF;
 $bg-color-cards: #FFFFFF;
-$responsive-typo: clamp(1rem, 3vw, 2.5rem);
+$responsive-typo: clamp(1rem, 3vw, 2rem);
 
 @mixin shadow {
     box-shadow: -1px 1px 5px $bg-color-cards;
