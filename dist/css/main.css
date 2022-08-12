@@ -51,6 +51,17 @@ img {
           appearance: none;
   position: absolute;
 }
+.popup__toggle:checked ~ .popup__menu, .popup__toggle:checked ~ .popup__label::before {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.popup__toggle-more:checked ~ .popup__more {
+  display: block;
+  margin-top: 2rem;
+}
+.popup__toggle-more:checked ~ .popup__label-more::after {
+  content: "Less";
+}
 .popup__label {
   position: relative;
 }
@@ -80,31 +91,22 @@ img {
 .popup__label-more::after {
   content: "More";
 }
-.popup__toggle:checked ~ .popup__menu, .popup__toggle:checked ~ .popup__label::before {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-}
-.popup__toggle-more:checked ~ .popup__more {
-  display: block;
-  margin-top: 2rem;
-}
-.popup__toggle-more:checked ~ .popup__label-more::after {
-  content: "Less";
-}
 .popup__toggle:focus + .popup__label, .popup__toggle-more:focus + .popup__label-more, .popup__item-link:focus, .popup__more-item-link:focus {
   outline: #4A7AFF auto 1px;
 }
-.popup__menu-item, .popup__more-item {
+.popup__menu-item:hover, .popup__more-item:hover, .popup__label-more:hover {
+  transform: scale(1.05);
+}
+.popup__menu-item:active, .popup__more-item:active, .popup__label-more:active {
+  transform: translateY(2px);
+}
+.popup__item-link, .popup__more-item-link {
   display: flex;
   flex-flow: column;
   align-items: center;
   gap: 0.5rem;
-}
-.popup__menu-item:hover, .popup__more-item:hover {
-  transform: scale(1.05);
-}
-.popup__menu-item:active, .popup__more-item:active {
-  transform: translateY(2px);
+  width: 5rem;
+  padding: 0.2rem;
 }
 .popup__menu {
   font-size: 1rem;

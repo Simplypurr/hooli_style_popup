@@ -5,6 +5,22 @@
         position: absolute;
     }
 
+    &__toggle:checked ~ &__menu,
+    &__toggle:checked ~ &__label::before {
+        opacity: 1;
+        @include transition(opacity);
+    } 
+    
+    &__toggle-more:checked ~ &__more {
+        display: block;
+        margin-top: 2rem;
+    }
+    &__toggle-more:checked ~ &__label-more {
+        &::after {
+            content: "Less";
+        }
+    }
+    
     &__label {
         position: relative;
         &::before {
@@ -36,24 +52,10 @@
         &::after {
             content: "More";
         }
+
     }
 
     
-    &__toggle:checked ~ &__menu,
-    &__toggle:checked ~ &__label::before {
-        opacity: 1;
-        @include transition(opacity);
-    } 
-
-    &__toggle-more:checked ~ &__more {
-        display: block;
-        margin-top: 2rem;
-    }
-    &__toggle-more:checked ~ &__label-more {
-        &::after {
-            content: "Less";
-        }
-    }
     
     &__toggle:focus + &__label,
     &__toggle-more:focus + &__label-more,
@@ -63,14 +65,21 @@
     }
 
     &__menu-item,
-    &__more-item {
-        @include flex;
+    &__more-item,
+    &__label-more {
         &:hover {
             transform: scale(1.05);  
         }
         &:active {
             transform: translateY(2px);   
         }
+    }
+
+    &__item-link,
+    &__more-item-link {
+        @include flex;
+        width: 5rem;
+        padding: 0.2rem;
     }
     
     
