@@ -52,8 +52,8 @@ img {
   position: absolute;
 }
 .popup__toggle:checked ~ .popup__menu, .popup__toggle:checked ~ .popup__label::before {
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
+  transform: scaleX(1);
+  transition: transform 0.2s ease-in-out;
 }
 .popup__toggle-more:checked ~ .popup__more {
   display: block;
@@ -84,8 +84,8 @@ img {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid #FFFFFF;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
 }
 .popup__label-img {
   width: 2rem;
@@ -117,9 +117,9 @@ img {
   overflow: scroll;
   background-color: #FFFFFF;
   border-radius: 0.6rem;
-  opacity: 0;
+  transform: scaleX(0);
   box-shadow: -1px 1px 5px #FFFFFF;
-  transition: opacity 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 .popup__menu::-webkit-scrollbar {
   display: none;
@@ -190,7 +190,7 @@ body {
   background-position: 0% 100%;
   background-repeat: no-repeat;
   background-size: 0% 2px;
-  transition: background-size 0.3s ease-in-out;
+  transition: background-size 0.2s ease-in-out;
 }
 .focus:hover {
   background-size: 100% 2px;
