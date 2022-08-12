@@ -58,7 +58,7 @@ img {
   content: " ";
   position: absolute;
   top: 3rem;
-  margin-left: 0.2rem;
+  margin-left: 0.25rem;
   width: 0px;
   height: 0px;
   border-left: 10px solid transparent;
@@ -74,17 +74,37 @@ img {
 .popup__label-more {
   cursor: pointer;
   position: absolute;
-  right: 7rem;
+  right: 6.5rem;
+  padding: 0.5rem;
+}
+.popup__label-more::after {
+  content: "More";
 }
 .popup__toggle:checked ~ .popup__menu, .popup__toggle:checked ~ .popup__label::before {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
-.popup__toggle-more:checked ~ .popup__menu__more {
+.popup__toggle-more:checked ~ .popup__more {
   display: block;
+  margin-top: 2rem;
 }
-.popup__toggle:focus + .popup__label, .popup__item-link:focus {
+.popup__toggle-more:checked ~ .popup__label-more::after {
+  content: "Less";
+}
+.popup__toggle:focus + .popup__label, .popup__toggle-more:focus + .popup__label-more, .popup__item-link:focus, .popup__more-item-link:focus {
   outline: #4A7AFF auto 1px;
+}
+.popup__menu-item, .popup__more-item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.popup__menu-item:hover, .popup__more-item:hover {
+  transform: scale(1.05);
+}
+.popup__menu-item:active, .popup__more-item:active {
+  transform: translateY(2px);
 }
 .popup__menu {
   font-size: 1rem;
@@ -108,25 +128,19 @@ img {
   grid-template: repeat(4, minmax(4rem, 1fr))/repeat(3, minmax(5rem, 1fr));
   gap: 1rem;
   justify-items: center;
-  overflow: scroll;
 }
-.popup__menu-item {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-.popup__menu-item:hover {
-  transform: scale(1.05);
-}
-.popup__menu-item:focus {
-  outline: #4A7AFF auto 1px;
-}
-.popup__menu__more {
+.popup__more {
   display: none;
 }
+.popup__more-items {
+  display: grid;
+  padding: 1rem;
+  grid-template: repeat(2, minmax(4rem, 1fr))/repeat(3, minmax(5rem, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
 .popup .item-img {
-  width: 2rem;
+  width: 2.5rem;
   height: 2rem;
 }
 
@@ -169,6 +183,7 @@ body {
 }
 
 .focus {
+  padding-bottom: 0.2rem;
   background-image: linear-gradient(#4A7AFF, #4A7AFF);
   background-position: 0% 100%;
   background-repeat: no-repeat;
