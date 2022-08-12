@@ -15,14 +15,27 @@
         display: block;
         margin-top: 2rem;
     }
+
     &__toggle-more:checked ~ &__label-more {
         &::after {
             content: "Less";
         }
     }
+
+    &__label-more {
+        cursor: pointer;
+        position: absolute;
+        right: 6.5rem;
+        padding: 0.5rem;
+
+        &::after {
+            content: "More";
+        }
+    }
     
     &__label {
         position: relative;
+        
         &::before {
             content: ' ';
             position: absolute;
@@ -43,17 +56,6 @@
         cursor: pointer;
     }
 
-    &__label-more {
-        cursor: pointer;
-        position: absolute;
-        right: 6.5rem;
-        padding: 0.5rem;
-
-        &::after {
-            content: "More";
-        }
-
-    }
 
     
     

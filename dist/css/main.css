@@ -62,6 +62,15 @@ img {
 .popup__toggle-more:checked ~ .popup__label-more::after {
   content: "Less";
 }
+.popup__label-more {
+  cursor: pointer;
+  position: absolute;
+  right: 6.5rem;
+  padding: 0.5rem;
+}
+.popup__label-more::after {
+  content: "More";
+}
 .popup__label {
   position: relative;
 }
@@ -81,15 +90,6 @@ img {
 .popup__label-img {
   width: 2rem;
   cursor: pointer;
-}
-.popup__label-more {
-  cursor: pointer;
-  position: absolute;
-  right: 6.5rem;
-  padding: 0.5rem;
-}
-.popup__label-more::after {
-  content: "More";
 }
 .popup__toggle:focus + .popup__label, .popup__toggle-more:focus + .popup__label-more, .popup__item-link:focus, .popup__more-item-link:focus {
   outline: #4A7AFF auto 1px;
