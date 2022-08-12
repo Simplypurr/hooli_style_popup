@@ -24,64 +24,44 @@ body {
         font-size: $responsive-typo;
         font-weight: 600;
         color: $primary-color;
-        background-image: linear-gradient($bg-color,$bg-color);
-        background-position: 0% 100%;
-        background-repeat: no-repeat;
-        background-size: 0% 3px;
-        @include transition(background-size);
-
-        &:hover {
-            background-size: 100% 3px;
-            cursor: pointer;
-        }
     }
 
-
 }   
-
-
 
 .nav {
  &__items {
         display: flex;
         align-items: center;
-        gap: clamp(1rem, 3vw, 2.5rem);
+        gap: clamp(1rem, 3vw, 2.7rem);
     }
 
     &__item {
         font-size: clamp(1rem, 2vw, 1.5rem);
-       
-    
-        &:focus {
-            outline: 1px solid $bg-color;
-        }
     }
 
-    &__link {
+     &__link-image {
+        width: 2rem;        
+    }   
+}
+
+.focus {
+    // padding-bottom: 0.2rem;
+    background-image: linear-gradient($bg-color,$bg-color);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    @include transition(background-size);
+
+    &:hover {
+        background-size: 100% 2px;
         cursor: pointer;
-        background-image: linear-gradient($bg-color,$bg-color);
-        background-position: 0% 100%;
-        background-repeat: no-repeat;
-        background-size: 0% 3px;
-        @include transition(background-size);
+    }
+    &:focus { 
+        outline: $bg-color auto 1px;
+    }
 
-        &:hover {
-            background-size: 100% 3px;
-            cursor: pointer;
-        }
+    &:active {
+        transform: translateY(2px);
         
-
-        &-image {
-            width: 2rem;
-
-            &:hover { 
-                box-shadow: -1px 1px 5px $bg-color;
-            }
-
-            &:focus {
-                border: 2px solid $bg-color;
-            }
-        }   
-
     }
 }

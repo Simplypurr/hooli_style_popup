@@ -1,7 +1,26 @@
 .popup {
+    // position: relative;
+    &__toggle-more, 
     &__toggle {
         appearance: none;
         position: absolute;
+    }
+
+    &__label {
+        position: relative;
+        &::before {
+            content: ' ';
+            position: absolute;
+            top: 3rem;
+            margin-left: 0.2rem;
+            width: 0px;
+            height: 0px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid $bg-color-cards;
+            opacity: 0;
+            @include transition(opacity);
+        }
     }
 
     &__label-img {
@@ -9,41 +28,49 @@
         cursor: pointer;
     }
 
-    &__toggle:checked ~ &__menu {
+    &__label-more {
+        cursor: pointer;
+        position: absolute;
+        right: 7rem;
+    }
+
+    
+    &__toggle:checked ~ &__menu,
+    &__toggle:checked ~ &__label::before {
         opacity: 1;
         @include transition(opacity);
     } 
 
+    &__toggle-more:checked ~ &__menu__more {
+        display: block;
+    }
+    
     &__toggle:focus + &__label,
-    &__toggle:focus + &__item-link {
+    &__item-link:focus {
         outline: $bg-color auto 1px;
     }
-
-   
+    
+    
     &__menu {
         font-size: 1rem;
         position: absolute;
         top: 5rem;
         right: 2rem;
-        height: fit-content;
+        height: 24rem;
+        overflow: scroll;
         background-color: $bg-color-cards;
         border-radius: 0.6rem;
         opacity: 0;
         @include shadow;
         @include transition(opacity);
+        
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: -0.6rem;
-            left: calc(70% - 5.5vw);
-            width: 0px;
-            height: 0px;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 10px solid $bg-color-cards;
+        
+
+        &::-webkit-scrollbar {
+            display: none;
         }
-
+        
         
         &-items {
             display: grid;
@@ -53,22 +80,37 @@
             justify-items: center;
             overflow: scroll;
         }
-
+        
         &-item {
             @include flex;
             &:hover {
                 transform: scale(1.05);
             }
-
+            
             &:focus {
                 outline: $bg-color auto 1px;
             }
         }
     }
+    
+    &__menu__more {
+        display: none;
+
+        &-items {
+
+        }
+
+        &-item {
+        }
+
+        &-link {
+        }
+    }
+
+    .item-img {
+        width: 2rem;
+        height: 2rem;
+    }
 }
 
 
-.item-img {
-    width: 2rem;
-    height: 2rem;
-}
