@@ -125,14 +125,13 @@ img {
   gap: 1rem;
   justify-items: center;
 }
+.popup__more-flex-wrapper {
+  display: flex;
+  flex-direction: column;
+}
 .popup .item-img {
   width: auto;
   height: 2rem;
-}
-
-.label-more {
-  display: flex;
-  flex-direction: column;
 }
 
 body {
