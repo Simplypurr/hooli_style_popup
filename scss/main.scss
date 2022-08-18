@@ -17,11 +17,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
     padding: 1.5rem;
 
     &__logo {
-        border-radius: 1.5rem;
         font-size: $responsive-typo;
         font-weight: 600;
 
@@ -50,7 +48,7 @@ body {
             display: flex;
             align-items: center;
             padding: 1rem;
-            gap: clamp(1rem, 3vw, 2.7rem);
+            gap: 0.6rem
         }
 
         &-item {

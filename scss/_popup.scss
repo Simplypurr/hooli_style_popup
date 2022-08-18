@@ -1,4 +1,5 @@
 .popup {
+    position: relative;
     &__toggle-more, 
     &__toggle {
         appearance: none;
@@ -7,53 +8,33 @@
 
     &__toggle:checked ~ &__menu,
     &__toggle:checked ~ &__label::before {
-        transform: scaleX(1);
-        @include transition(transform);
+        display: block;
+        
     } 
     
-    &__toggle-more:checked ~ &__more {
-        display: block;
-        margin-top: 2rem;
+    &__toggle-more:checked ~ &__more-items {
+        display: grid;
     }
 
     &__toggle-more:checked ~ &__label-more {
+        margin: 1rem 0;
+
         &::after {
             content: "Less";
         }
     }
 
     &__label-more {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
         cursor: pointer;
-        position: absolute;
-        right: 6.5rem;
-        padding: 0.5rem;
+        padding: 0.3rem;
 
         &::after {
             content: "More";
         }
-    }
-    
-    &__label {
-        position: relative;
-
-        &::before {
-            content: ' ';
-            position: absolute;
-            top: 3rem;
-            margin-left: 0.25rem;
-            width: 0px;
-            height: 0px;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 10px solid $bg-color-cards;
-            transform: scaleX(0);
-            @include transition(transform);
-        }
-    }
-
-    &__label-img {
-        // width: 2rem;
-        cursor: pointer;
     }
 
     &__toggle:focus + &__label,
@@ -84,17 +65,16 @@
     }
     
     &__menu {
+        display: none;
         font-size: 1rem;
         position: absolute;
-        top: 6rem;
-        right: 3rem;
+        top: 3.5rem;
+        right: -7rem;
         height: 24rem;
         overflow: scroll;
         background-color: $bg-color-cards;
         border-radius: 0.6rem;
-        transform: scaleX(0);
         @include shadow;
-        @include transition(transform);
         
         &::-webkit-scrollbar {
             display: none;
@@ -109,23 +89,24 @@
         }
     }
     
-    &__more {
-        display: none;
-
-        &-items {
-            display: grid;
-            padding: 1rem;
+        &__more-items {
+            display: none;
+            order: 0;
+            padding: 0 1rem;
             grid-template: repeat(2, minmax(4rem, 1fr)) / repeat(3, minmax(5rem, 1fr));
             gap: 1rem;
             justify-items: center;
         }
 
-    }
 
     .item-img {
-        width: 2.5rem;
+        width: auto;
         height: 2rem;
     }
 }
 
 
+.label-more {
+    display: flex;
+    flex-direction: column;
+}
