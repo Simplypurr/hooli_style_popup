@@ -191,6 +191,9 @@ body {
   outline: #4A7AFF auto 3px;
 }
 .header__nav-link-image {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   opacity: 0.7;
 }
 .header__nav-link-image:hover {
