@@ -45,9 +45,6 @@ img {
     height: 500px;
   }
 }
-.popup {
-  position: relative;
-}
 .popup__toggle-more, .popup__toggle {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -102,8 +99,8 @@ img {
   display: none;
   font-size: 1rem;
   position: absolute;
-  top: 3.5rem;
-  right: -7rem;
+  top: 5.5rem;
+  right: 1.5rem;
   height: 24rem;
   overflow: scroll;
   background-color: #FFFFFF;
@@ -150,8 +147,6 @@ body {
 
 .header {
   position: relative;
-  margin: auto;
-  width: 95vw;
   overflow: visible;
   display: flex;
   justify-content: space-between;
@@ -178,7 +173,6 @@ body {
 .header__nav-items {
   display: flex;
   align-items: center;
-  padding: 1rem;
   gap: 0.6rem;
 }
 .header__nav-item {

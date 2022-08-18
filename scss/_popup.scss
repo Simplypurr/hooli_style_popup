@@ -1,5 +1,4 @@
 .popup {
-    position: relative;
     &__toggle-more, 
     &__toggle {
         appearance: none;
@@ -68,8 +67,8 @@
         display: none;
         font-size: 1rem;
         position: absolute;
-        top: 3.5rem;
-        right: -7rem;
+        top: 5.5rem;
+        right: 1.5rem;
         height: 24rem;
         overflow: scroll;
         background-color: $bg-color-cards;
